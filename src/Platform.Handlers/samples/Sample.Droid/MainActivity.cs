@@ -20,6 +20,7 @@ namespace Sample.Droid
 
 			Xamarin.Essentials.Platform.Init(this, savedInstanceState);
 
+			Xamarin.Forms.Forms.Init(this, savedInstanceState);
 			SetContentView(Resource.Layout.activity_main);
 
 			AndroidX.AppCompat.Widget.Toolbar toolbar = FindViewById<AndroidX.AppCompat.Widget.Toolbar>(Resource.Id.toolbar);
@@ -35,7 +36,9 @@ namespace Sample.Droid
 		{
 			foreach (var view in views)
 			{
-				_page.AddView(view.ToNative(this));
+				var result = view.ToNative(this);
+				view.Arrange(new Rectangle(0, 0, 300, 50));
+				_page.AddView(result);
 			}
 		}
 

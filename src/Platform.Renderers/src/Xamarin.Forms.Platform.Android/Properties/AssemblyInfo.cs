@@ -2,10 +2,8 @@ using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.Android;
+using Xamarin.Forms.Platform.Android.AppCompat;
 
-// These renderers are now registered via the RenderWithAttribute in the Android Forwarders project.
-// Note that AppCompat and FastRenderers are also registered conditionally in FormsAppCompatActivity.LoadApplication
-#if ROOT_RENDERERS
 [assembly: ExportRenderer (typeof (BoxView), typeof (BoxRenderer))]
 [assembly: ExportRenderer (typeof (Entry), typeof (EntryRenderer))]
 [assembly: ExportRenderer (typeof (Editor), typeof (EditorRenderer))]
@@ -33,15 +31,15 @@ using Xamarin.Forms.Platform.Android;
 [assembly: ExportRenderer (typeof (OpenGLView), typeof (OpenGLViewRenderer))]
 [assembly: ExportRenderer (typeof (CheckBox), typeof (CheckBoxRenderer))]
 
-[assembly: ExportRenderer (typeof (TabbedPage), typeof (TabbedRenderer))]
-[assembly: ExportRenderer (typeof (NavigationPage), typeof (NavigationRenderer))]
+[assembly: ExportRenderer (typeof (TabbedPage), typeof (TabbedPageRenderer))]
+[assembly: ExportRenderer (typeof (NavigationPage), typeof (NavigationPageRenderer))]
 [assembly: ExportRenderer (typeof (CarouselPage), typeof (CarouselPageRenderer))]
 [assembly: ExportRenderer (typeof (Page), typeof (PageRenderer))]
 [assembly: ExportRenderer (typeof (FlyoutPage), typeof (FlyoutPageRenderer))]
-[assembly: ExportRenderer (typeof (MasterDetailPage), typeof (MasterDetailRenderer))]
+[assembly: ExportRenderer (typeof (FlyoutPage), typeof (FlyoutPage))]
 [assembly: ExportRenderer (typeof (RefreshView), typeof (RefreshViewRenderer))]
-[assembly: ExportRenderer(typeof(Path), typeof(PathRenderer))]
-#endif
+
+
 
 [assembly: ExportRenderer(typeof(Shell), typeof(ShellRenderer))]
 

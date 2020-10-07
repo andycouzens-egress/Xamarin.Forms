@@ -408,6 +408,7 @@ namespace Xamarin.Forms
 				Y = value.Y;
 				SetSize(value.Width, value.Height);
 				BatchCommit();
+				OnPropertyChanged("Frame");
 			}
 		}
 
